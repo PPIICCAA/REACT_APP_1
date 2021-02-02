@@ -1,7 +1,9 @@
+import Contador from "./Counter"
+
 const Plate = (props) => {
     return (
         <div className="elemento">
-        <img src={props.img}/>
+        <img src={props.img} alt={props.nombrePlato}/>
         <div className="texto ">
             <p>{props.precioPlato}€</p>
             <h5>{props.nombrePlato}</h5>
@@ -11,11 +13,5 @@ const Plate = (props) => {
     </div>
     )
 }
-class PlateList extends React.Component {
-    render(){
-        return (<div>{listaPlatos.map((plate, i) =>{
-            return <Plate key={i} img={plate.imgPLato} precioPlato={plate.precioPlato} nombrePlato={plate.nombrePlato} descripcionPlato={plate.descripcionPlato} id={listaPlatos[i].id} number={listaPlatos[i].cantidad}/>
-        })}</div>)
-    }
-}
-ReactDOM.render( <PlateList />, document.getElementById("list"));
+    
+export default Plate

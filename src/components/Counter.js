@@ -1,3 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import InputAumentar from "./InputAum"
+import InputDisminuir from "./InputDis"
+
+
 class Contador extends React.Component {
     constructor(props){
         super(props)
@@ -6,7 +12,7 @@ class Contador extends React.Component {
         }
     }
     resta = () => {
-        ReactDOM.render( <TotalResta />, document.querySelector(".price"));
+        ReactDOM.render( <InputDisminuir />, document.querySelector(".price"));
         localStorage.setItem(this.props.index, this.state.counter - 1)
         if (localStorage.getItem(this.props.index) >= 0){
             this.setState((state) => {
@@ -17,7 +23,7 @@ class Contador extends React.Component {
         }
     }
     suma = () => {
-        ReactDOM.render( <TotalSuma />, document.querySelector(".price"));
+        ReactDOM.render( <InputAumentar />, document.querySelector(".price"));
         localStorage.setItem(this.props.index, this.state.counter + 1)
         this.setState((state) => {
             return {counter: state.counter + 1}
@@ -33,3 +39,4 @@ class Contador extends React.Component {
         )
     }
 }
+export default Contador
