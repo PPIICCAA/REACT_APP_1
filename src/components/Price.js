@@ -1,4 +1,5 @@
 import listaPlatos from "../listaplatos.js"
+import React from 'react';
 
 class Price extends React.Component {
     constructor(props){

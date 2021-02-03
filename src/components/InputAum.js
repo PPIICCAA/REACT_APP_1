@@ -13,6 +13,7 @@ class InputAumentar extends React.Component {
         let array = []
         Object.keys(localStorage).map((plate , element) =>{
             return (
+                
                 element = (listaPlatos[plate].precioPlato * localStorage.getItem(plate)),
                 this.state.subtotal = element,
                 array.push(element)

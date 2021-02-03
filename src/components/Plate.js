@@ -13,5 +13,5 @@ const Plate = (props) => {
     </div>
     )
 }
-    
+
 export default Plate
