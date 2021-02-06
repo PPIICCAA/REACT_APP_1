@@ -1,13 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import CategoryList from "./components/Category.js"
+import PlateList from "./components/PlateList.js"
+import InputNormal from "./components/InputNor.js"
+import Items from "./components/Push.js"
+import Price from "./components/Price.js"
 
-export default function BasicExample() {
+function App() {
     return (
       <Router>
         <ModelSwitch />
       </Router>
     );
 }
+
 
 function ModelSwitch() {
     return (
@@ -29,8 +35,8 @@ function Main() {
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </header>
             <main>
-                <div id="slider"></div>
-                <div id="list"></div>
+                <div id="slider"><CategoryList /></div>
+                <div id="list"><PlateList /></div>
             </main>
             <footer>
             <button className="botonCarrito">
@@ -39,7 +45,7 @@ function Main() {
                 </NavLink>
             </button>
 
-            <div className="price"></div>
+            <div className="price"><InputNormal /></div>
             </footer>
         </div>
     )
@@ -59,7 +65,7 @@ function Cash () {
         </div>
         </header>
         <main>
-            <div id="pushList" className="elementosMenu2"></div>
+            <div id="pushList" className="elementosMenu2"><Items /></div>
         </main>
         <footer className="desglosePrecio">
             <div className="precio">
@@ -69,10 +75,11 @@ function Cash () {
                     <p>Delivery</p>
                     <p>TOTAL</p>
                 </div>
-                <div id="price"></div>
+                <div id="price"><Price /></div>
             </div>
             <button className="boton2" /*</footer>onclick="window.location.href='https://www.paypal.com/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Fmoney&state=%2F'"*/>Enviar pedido</button>
         </footer>
     </div>
     )
 }
+export default App

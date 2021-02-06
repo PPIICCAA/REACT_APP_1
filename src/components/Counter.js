@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import InputAumentar from "./InputAum"
 import InputDisminuir from "./InputDis"
 
-
 class Contador extends React.Component {
     constructor(props){
         super(props)
@@ -12,11 +11,12 @@ class Contador extends React.Component {
         }
     }
     resta = () => {
+ 
         ReactDOM.render( <InputDisminuir />, document.querySelector(".price"));
         localStorage.setItem(this.props.index, this.state.counter - 1)
         if (localStorage.getItem(this.props.index) >= 0){
             this.setState((state) => {
-            return {counter: this.state.counter - 1} 
+            return {counter: state.counter - 1} 
         })}
         if (this.state.counter <= 1 ){
             localStorage.removeItem(this.props.index)
