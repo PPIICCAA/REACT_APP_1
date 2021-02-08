@@ -6,7 +6,11 @@ import Contador from "./CounterCash.js"
 import Items from "./Push.js"
 
 class ItemsPush extends React.Component {
-    x = () => {
+    constructor(props){
+        super(props)
+        this.x = this.x.bind(this);
+    }
+    x() {
         localStorage.removeItem(this.props.index)
         ReactDOM.render( <Items />, document.getElementById("pushList"));
         ReactDOM.render( <FooterDisminuir />, document.getElementById("price"));

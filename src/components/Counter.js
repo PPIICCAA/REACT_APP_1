@@ -9,9 +9,10 @@ class Contador extends React.Component {
         this.state = {
             counter: JSON.parse(localStorage.getItem(this.props.index)) || this.props.counter 
         }
+        this.toggleresta = this.toggleresta.bind(this);
+        this.togglesuma = this.togglesuma.bind(this);
     }
-    resta = () => {
- 
+    toggleresta() {
         ReactDOM.render( <InputDisminuir />, document.querySelector(".price"));
         localStorage.setItem(this.props.index, this.state.counter - 1)
         if (localStorage.getItem(this.props.index) >= 0){
@@ -22,7 +23,7 @@ class Contador extends React.Component {
             localStorage.removeItem(this.props.index)
         }
     }
-    suma = () => {
+    togglesuma() {
         ReactDOM.render( <InputAumentar />, document.querySelector(".price"));
         localStorage.setItem(this.props.index, this.state.counter + 1)
         this.setState((state) => {
@@ -30,11 +31,12 @@ class Contador extends React.Component {
         })
     }
     render(){
+        let quantity = localStorage.getItem(this.props.index) ||this.state.counter
         return (
         <div className="contador" data-numero={this.props.index}>
-            <button onClick={this.resta} className="resta">-</button>
-            <p className="quantity">{localStorage.getItem(this.props.index) ||this.state.counter}</p>
-            <button  onClick={this.suma} className="suma">+</button>
+            <button onClick={this.toggleresta} className="resta">-</button>
+            <p className="quantity">{quantity}</p>
+            <button  onClick={this.togglesuma} className="suma">+</button>
         </div>
         )
     }

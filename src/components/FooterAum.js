@@ -22,13 +22,14 @@ class FooterAumentar extends React.Component {
             for (let i =0; i < array.length; i++){
                 total += array[i]
             }
-
+            let tasas = (total * this.state.tasas).toPrecision(2)
+            let All = total + (total * this.state.tasas)
                 return (
                     <div className="columnaPrecio">
                 <p id="subtotal">{total}€</p>
-                <p id="tasas">{(total * this.state.tasas).toPrecision(2)}€</p>
+                <p id="tasas">{tasas}€</p>
                 <p id="delivery">FREE</p>
-                <p id="total">{total + (total * this.state.tasas)}€</p>
+                <p id="total">{All}€</p>
             </div>
                 )
             }

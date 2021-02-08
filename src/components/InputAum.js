@@ -25,7 +25,6 @@ class InputAumentar extends React.Component {
         }
 
         let number = total + (total * this.state.tasas)
-
         return (
             <div className="footer">
                 <h2>TOTAL: </h2>

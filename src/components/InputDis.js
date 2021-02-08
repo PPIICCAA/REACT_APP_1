@@ -24,7 +24,6 @@ class InputDisminuir extends React.Component {
         }
         
         let number = Object.keys(localStorage).length === 0 ? 0 : total + (total * this.state.tasas)
-
         return (
             <div className="footer">
                 <h2>TOTAL: </h2>

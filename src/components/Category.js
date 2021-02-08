@@ -13,9 +13,7 @@ const Category = (props) => {
 const CategoryList = () =>{
     let List = listaCategorias.map((category, i) => {return <Category key={i} img={category.imgCategoria} name={category.nombreCategoria}/>})
     return (
-            <div>
-            {List}    
-            </div>
+            <div>{List}</div>
         );
 }
 
